@@ -4,9 +4,9 @@ PostgreSQL is a powerful, open source object-relational database system with ove
 
 PostgreSQL has earned a strong reputation for its proven architecture, reliability, data integrity, robust feature set, extensibility, and the dedication of the open source community behind the software to consistently deliver performant and innovative solutions. PostgreSQL runs on [all major operating systems](https://www.postgresql.org/download/), has been [ACID](https://en.wikipedia.org/wiki/ACID)-compliant since 2001.
 
-PostgreSQL comes with [many features](https://www.postgresql.org/about/featurematrix/) aimed to help developers build applications, administrators to protect data integrity and build fault-tolerant environments, and help you manage your data no matter how big or small the dataset. In addition to being [free and open source](https://www.postgresql.org/about/license/), PostgreSQL is highly extensible. 
+PostgreSQL comes with [many features](https://www.postgresql.org/about/featurematrix/) aimed to help developers build applications, administrators to protect data integrity and build fault-tolerant environments, and help you manage your data no matter how big or small the dataset. In addition to being [free and open source](https://www.postgresql.org/about/license/), PostgreSQL is highly extensible.
 
-### **Tables**
+## **Tables**
 
 * **`users` Table -** This table keeps track of all the signed up user. Data in `users`updates as the user complete his/her KYC.
 
@@ -32,7 +32,7 @@ PostgreSQL comes with [many features](https://www.postgresql.org/about/featurema
 
 **\`\`**
 
-* **`investments` Table -** This ****table contains data related to investments made by users in different firms.
+* **`investments` Table -** This _\*\*_table contains data related to investments made by users in different firms.
 
 ![Investment Table Structure](.gitbook/assets/screenshot-2020-12-03-at-1.23.43-pm.png)
 

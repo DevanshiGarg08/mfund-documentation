@@ -8,14 +8,16 @@ Mfund Flutter app is a mono repo git project. We need to clone four repositories
 * mfund-api-service
 * mfund-framework
 * mfund-common-modules
+* mfund-dashboard-app
 
-```
+```text
 mkdir mfund-flutter
 cd mfund-flutter
 git clone <URL for mfund-app>
 git clone <URL for mfund-api-service>
 git clone <URL for mfund-framework>
 git clone <URL for mfund-common-modules>
+git clone <URL for mfund-dashboard-app>
 ```
 
 ## Setup for Firebase in mfund-app
@@ -23,6 +25,4 @@ git clone <URL for mfund-common-modules>
 * Create Firebase Storage by following this documentation - [https://firebase.google.com/docs/storage/android/start](https://firebase.google.com/docs/storage/android/start)
 * Setup firebase for IOS app using following documentation - [https://firebase.google.com/docs/flutter/setup?platform=ios](https://firebase.google.com/docs/flutter/setup?platform=ios)
 * Setup firebase for Android app using following documentation - [https://firebase.google.com/docs/flutter/setup?platform=android](https://firebase.google.com/docs/flutter/setup?platform=android)
-
-
 

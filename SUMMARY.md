@@ -9,7 +9,6 @@
 * [Database Structure](database-structure.md)
 * [App Flow](app-flow.md)
 * [Backend Flow](backend-flow.md)
-* [API Documentation](api-documentation.md)
 * [Screens](screens/README.md)
   * [Login Screen](screens/login-screen.md)
   * [Signup Screen](screens/signup-screen.md)
@@ -18,4 +17,7 @@
   * [Investment Screen](screens/investment-screen.md)
   * [Profile Screen](screens/profile-screen.md)
   * [Withdraw Screen](screens/withdraw-screen.md)
+* [API Documentation](api-documentation-1/README.md)
+  * [Dashboard APIs](api-documentation-1/dashboard-apis.md)
+  * [App APIs](api-documentation-1/api-documentation.md)
 

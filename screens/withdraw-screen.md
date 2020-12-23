@@ -1,6 +1,6 @@
 # Withdraw Screen
 
-### Withdraw
+## Withdraw
 
 * User can withdraw investment amount in their bank account.
 
