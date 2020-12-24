@@ -40,94 +40,6 @@ On Successful Login
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://market-mfund-development.herokuapp.com/" path="api/admin/authentication/add\_admin/" %}
-{% api-method-summary %}
-Add Admin
-{% endapi-method-summary %}
-
-{% api-method-description %}
-This endpoint allows to create an admin in the postgreSQL database . This API requires JWT access token which is retrieved from Login Admin API.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Bearer eyjhbg.....
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="password" type="string" required=true %}
-Password to be associated with the respective admin
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="email" type="string" required=true %}
-Email Id to be registered
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Admin has been created successfully.
-{% endapi-method-response-example-description %}
-
-```
-{
-    "status": "success"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="post" host="https://market-mfund-development.herokuapp.com/" path="api/admin/change\_password" %}
-{% api-method-summary %}
-Change Password
-{% endapi-method-summary %}
-
-{% api-method-description %}
-This endpoint allows admin to change his/her current password. This API requires JWT access token which is retrieved from Login Admin API.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Bearer ejhyzn...
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="newPassword" type="string" required=true %}
-New Password for admin
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="oldPassword" type="string" required=true %}
-Current password of admin
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-{
-    "status": "success"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
 {% api-method method="get" host="https://market-mfund-development.herokuapp.com/" path="api/admin/home/" %}
 {% api-method-summary %}
 Home API
@@ -230,6 +142,342 @@ Details of all the organisations
         "rating": 3.5
     }
 ]
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://market-mfund-development.herokuapp.com/" path="api/admin/add\_new\_organisation" %}
+{% api-method-summary %}
+Add Organisation API
+{% endapi-method-summary %}
+
+{% api-method-description %}
+This endpoint allows an admin to add organisations in the database.This API requires JWT token which is retrieved from Login API.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Access Token.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="returns" type="string" required=true %}
+returns of the organisation
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="currentValue" type="string" required=true %}
+current value of organisation
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="xirr" type="string" required=true %}
+xirr of organisation
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="schemeName" type="string" required=true %}
+Name of the organisation to be added
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Successfully added an organisation.
+{% endapi-method-response-example-description %}
+
+```
+{
+    "status": "success"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://market-mfund-development.herokuapp.com/" path="api/admin/investors" %}
+{% api-method-summary %}
+Investors API
+{% endapi-method-summary %}
+
+{% api-method-description %}
+This endpoint will retrieve the Investors details. This API requires JWT token which is retrieved from Login API.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Access Token.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Successfully retrieved Investors.
+{% endapi-method-response-example-description %}
+
+```
+[
+    {
+        "userFullName": "Testing",
+        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
+        "currentValue": "$489",
+        "returns": "$4405.56",
+        "currentValueRate": "+0.54%",
+        "returnsRate": "-0.54%",
+        "duration": "365 Days",
+        "status": "Running"
+    },
+    {
+        "userFullName": "Madhav Bansal",
+        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
+        "currentValue": "$489",
+        "returns": "$4405.56",
+        "currentValueRate": "+0.54%",
+        "returnsRate": "-0.54%",
+        "duration": "1095 Days",
+        "status": "Running"
+    },
+    {
+        "userFullName": "Devanshi Garg",
+        "schemeName": "Reliance Small Cap Fund Direct Growth",
+        "currentValue": "$758",
+        "returns": "$4405.56",
+        "currentValueRate": "+0.54%",
+        "returnsRate": "-0.54%",
+        "duration": "1095 Days",
+        "status": "Running"
+    },
+    {
+        "userFullName": "Devanshi Garg",
+        "schemeName": "Reliance Small Cap Fund Direct Growth",
+        "currentValue": "$758",
+        "returns": "$4405.56",
+        "currentValueRate": "+0.54%",
+        "returnsRate": "-0.54%",
+        "duration": "1825 Days",
+        "status": "Running"
+    }
+]
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://market-mfund-development.herokuapp.com/" path="api/admin/balances" %}
+{% api-method-summary %}
+Balances API
+{% endapi-method-summary %}
+
+{% api-method-description %}
+This endpoint will retrieve all the balances of the organisations. This API requires JWT token which is retrieved from Login API.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Access Token.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Successfully retrieved all the balance amount.
+{% endapi-method-response-example-description %}
+
+```
+[
+    {
+        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
+        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2FAxis.png?alt=media&token=70443f42-43aa-463b-9762-a33aa25eb8aa",
+        "amount": "$6000"
+    },
+    {
+        "schemeName": "Reliance Small Cap Fund Direct Growth",
+        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2FReliance.png?alt=media&token=432ad8b7-6825-42c4-affc-9943e813a7ef",
+        "amount": "$11000"
+    },
+    {
+        "schemeName": "Icici Prudential Bluechip Fund Direct Growth",
+        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2Ficici_logo.png?alt=media&token=762fe9a2-7308-413e-a956-d23b6bae9f03",
+        "amount": "$0"
+    },
+    {
+        "schemeName": "Tesla",
+        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2FAxis.png?alt=media&token=70443f42-43aa-463b-9762-a33aa25eb8aa",
+        "amount": "$0"
+    },
+    {
+        "schemeName": "Amazon",
+        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2FAxis.png?alt=media&token=70443f42-43aa-463b-9762-a33aa25eb8aa",
+        "amount": "$0"
+    }
+]
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://market-mfund-development.herokuapp.com/" path="api/admin/transaction\_details" %}
+{% api-method-summary %}
+Transactions API
+{% endapi-method-summary %}
+
+{% api-method-description %}
+This endpoint will retrieve the transaction details made by a specific user. This API requires JWT token which is retrieved from Login API.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Access Token.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Successfully retrieved Transactions.
+{% endapi-method-response-example-description %}
+
+```
+[
+    {
+        "userFullName": "Testing",
+        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
+        "amount": "1000",
+        "paymentMode": "net_banking",
+        "dateOfInvestments": "365 Days",
+        "status": "3 Dec 2020 3:53 AM"
+    },
+    {
+        "userFullName": "Madhav Bansal",
+        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
+        "amount": "5000",
+        "paymentMode": "Debit card",
+        "dateOfInvestments": "1095 Days",
+        "status": "7 Dec 2020 5:42 AM"
+    },
+    {
+        "userFullName": "Devanshi Garg",
+        "schemeName": "Reliance Small Cap Fund Direct Growth",
+        "amount": "10000",
+        "paymentMode": "DebitCard",
+        "dateOfInvestments": "1095 Days",
+        "status": "30 Nov 2020 6:27 AM"
+    },
+    {
+        "userFullName": "Devanshi Garg",
+        "schemeName": "Reliance Small Cap Fund Direct Growth",
+        "amount": "1000",
+        "paymentMode": "DebitCard",
+        "dateOfInvestments": "1825 Days",
+        "status": "30 Nov 2020 6:42 AM"
+    }
+]
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://market-mfund-development.herokuapp.com/" path="api/admin/authentication/add\_admin/" %}
+{% api-method-summary %}
+Add Admin
+{% endapi-method-summary %}
+
+{% api-method-description %}
+This endpoint allows to create an admin in the postgreSQL database . This API requires JWT access token which is retrieved from Login Admin API.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Bearer eyjhbg.....
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="password" type="string" required=true %}
+Password to be associated with the respective admin
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="email" type="string" required=true %}
+Email Id to be registered
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Admin has been created successfully.
+{% endapi-method-response-example-description %}
+
+```
+{
+    "status": "success"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://market-mfund-development.herokuapp.com/" path="api/admin/change\_password" %}
+{% api-method-summary %}
+Change Password
+{% endapi-method-summary %}
+
+{% api-method-description %}
+This endpoint allows admin to change his/her current password. This API requires JWT access token which is retrieved from Login Admin API.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Bearer ejhyzn...
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="newPassword" type="string" required=true %}
+New Password for admin
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="oldPassword" type="string" required=true %}
+Current password of admin
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "status": "success"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -367,254 +615,6 @@ Success as all notifications are deleted.
 {
     "status": "success"
 }
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="post" host="https://market-mfund-development.herokuapp.com/" path="api/admin/add\_new\_organisation" %}
-{% api-method-summary %}
-Add Organisation API
-{% endapi-method-summary %}
-
-{% api-method-description %}
-This endpoint allows an admin to add organisations in the database.This API requires JWT token which is retrieved from Login API.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Access Token.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="returns" type="string" required=true %}
-returns of the organisation
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="currentValue" type="string" required=true %}
-current value of organisation
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="xirr" type="string" required=true %}
-xirr of organisation
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="schemeName" type="string" required=true %}
-Name of the organisation to be added
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Successfully added an organisation.
-{% endapi-method-response-example-description %}
-
-```
-{
-    "status": "success"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="get" host="https://market-mfund-development.herokuapp.com/" path="api/admin/balances" %}
-{% api-method-summary %}
-Balances API
-{% endapi-method-summary %}
-
-{% api-method-description %}
-This endpoint will retrieve all the balances of the organisations. This API requires JWT token which is retrieved from Login API.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Access Token.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Successfully retrieved all the balance amount.
-{% endapi-method-response-example-description %}
-
-```
-[
-    {
-        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
-        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2FAxis.png?alt=media&token=70443f42-43aa-463b-9762-a33aa25eb8aa",
-        "amount": "$6000"
-    },
-    {
-        "schemeName": "Reliance Small Cap Fund Direct Growth",
-        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2FReliance.png?alt=media&token=432ad8b7-6825-42c4-affc-9943e813a7ef",
-        "amount": "$11000"
-    },
-    {
-        "schemeName": "Icici Prudential Bluechip Fund Direct Growth",
-        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2Ficici_logo.png?alt=media&token=762fe9a2-7308-413e-a956-d23b6bae9f03",
-        "amount": "$0"
-    },
-    {
-        "schemeName": "Tesla",
-        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2FAxis.png?alt=media&token=70443f42-43aa-463b-9762-a33aa25eb8aa",
-        "amount": "$0"
-    },
-    {
-        "schemeName": "Amazon",
-        "image": "https://firebasestorage.googleapis.com/v0/b/market-mfund-development.appspot.com/o/Organization-logo-image%2FAxis.png?alt=media&token=70443f42-43aa-463b-9762-a33aa25eb8aa",
-        "amount": "$0"
-    }
-]
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="get" host="https://market-mfund-development.herokuapp.com/" path="api/admin/transaction\_details" %}
-{% api-method-summary %}
-Transactions API
-{% endapi-method-summary %}
-
-{% api-method-description %}
-This endpoint will retrieve the transaction details made by a specific user. This API requires JWT token which is retrieved from Login API.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Access Token.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Successfully retrieved Transactions.
-{% endapi-method-response-example-description %}
-
-```
-[
-    {
-        "userFullName": "Testing",
-        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
-        "amount": "1000",
-        "paymentMode": "net_banking",
-        "dateOfInvestments": "365 Days",
-        "status": "3 Dec 2020 3:53 AM"
-    },
-    {
-        "userFullName": "Madhav Bansal",
-        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
-        "amount": "5000",
-        "paymentMode": "Debit card",
-        "dateOfInvestments": "1095 Days",
-        "status": "7 Dec 2020 5:42 AM"
-    },
-    {
-        "userFullName": "Devanshi Garg",
-        "schemeName": "Reliance Small Cap Fund Direct Growth",
-        "amount": "10000",
-        "paymentMode": "DebitCard",
-        "dateOfInvestments": "1095 Days",
-        "status": "30 Nov 2020 6:27 AM"
-    },
-    {
-        "userFullName": "Devanshi Garg",
-        "schemeName": "Reliance Small Cap Fund Direct Growth",
-        "amount": "1000",
-        "paymentMode": "DebitCard",
-        "dateOfInvestments": "1825 Days",
-        "status": "30 Nov 2020 6:42 AM"
-    }
-]
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="get" host="https://market-mfund-development.herokuapp.com/" path="api/admin/investors" %}
-{% api-method-summary %}
-Investors API
-{% endapi-method-summary %}
-
-{% api-method-description %}
-This endpoint will retrieve the Investors details. This API requires JWT token which is retrieved from Login API.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Access Token.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Successfully retrieved Investors.
-{% endapi-method-response-example-description %}
-
-```
-[
-    {
-        "userFullName": "Testing",
-        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
-        "currentValue": "$489",
-        "returns": "$4405.56",
-        "currentValueRate": "+0.54%",
-        "returnsRate": "-0.54%",
-        "duration": "365 Days",
-        "status": "Running"
-    },
-    {
-        "userFullName": "Madhav Bansal",
-        "schemeName": "Axis Bluechip Fund Direct Plan Growth",
-        "currentValue": "$489",
-        "returns": "$4405.56",
-        "currentValueRate": "+0.54%",
-        "returnsRate": "-0.54%",
-        "duration": "1095 Days",
-        "status": "Running"
-    },
-    {
-        "userFullName": "Devanshi Garg",
-        "schemeName": "Reliance Small Cap Fund Direct Growth",
-        "currentValue": "$758",
-        "returns": "$4405.56",
-        "currentValueRate": "+0.54%",
-        "returnsRate": "-0.54%",
-        "duration": "1095 Days",
-        "status": "Running"
-    },
-    {
-        "userFullName": "Devanshi Garg",
-        "schemeName": "Reliance Small Cap Fund Direct Growth",
-        "currentValue": "$758",
-        "returns": "$4405.56",
-        "currentValueRate": "+0.54%",
-        "returnsRate": "-0.54%",
-        "duration": "1825 Days",
-        "status": "Running"
-    }
-]
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
