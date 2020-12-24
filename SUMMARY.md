@@ -7,7 +7,6 @@
 * [Technology Used](technology-used.md)
 * [Architecture](architecture.md)
 * [Database Structure](database-structure.md)
-* [App Flow](app-flow.md)
 * [Backend Flow](backend-flow.md)
 * [API Documentation](api-documentation-1/README.md)
   * [Dashboard APIs](api-documentation-1/dashboard-apis.md)
@@ -30,4 +29,7 @@
     * [Home Screen](screens-1/dashboard-screens/home-screen.md)
     * [App Bar](screens-1/dashboard-screens/app-bar.md)
     * [Login Screen](screens-1/dashboard-screens/login-screen.md)
+* [App Flow](app-flow-1/README.md)
+  * [Dashboard App Flow](app-flow-1/dashboard-app-flow.md)
+  * [User App Flow](app-flow-1/app-flow.md)
 
