@@ -23,3 +23,12 @@
 
 * Contains services, utils and common widget for both mfund-app and mfund-dashboard app.
 
+#### mfund-dashboard-app:
+
+The Admin dashboard has three main functions-
+
+* Can add any number of organisations.
+* Can view the details of all the investors.
+* Can view total number of investors, total investments and total balance.
+* Can create a new admin or change password of the current logged in admin.
+
