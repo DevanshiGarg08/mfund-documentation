@@ -13,8 +13,8 @@ Mfund Flutter app is a mono repo git project. We need to clone four repositories
 * mfund-dashboard-app : 
 
 ```text
-mkdir mfund-flutter
-cd mfund-flutter
+mkdir mfund-flutter-app
+cd mfund-flutter-app
 git clone <URL for mfund-app>
 git clone <URL for mfund-api-service>
 git clone <URL for mfund-framework>
@@ -30,6 +30,7 @@ git clone <URL for mfund-common-modules>
 ### Run the mfund-app
 
 ```text
+cd mfund-flutter-app
 flutter run
 ```
 
@@ -56,6 +57,7 @@ git clone <URL for mfund-common-modules>
 ### Run the mfund-dashboard-app
 
 ```text
+cd mfund-flutter-dasboard
 flutter run
 ```
 
